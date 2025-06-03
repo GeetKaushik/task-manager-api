@@ -11,7 +11,12 @@ connectDB()
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(
+  cors({
+    origin: 'https://task-manager-emeodukkn-geetkaushiks-projects.vercel.app',
+    credentials: true,
+  })
+)
 
 // Registering routes
 app.use('/api/auth', authRoutes)
